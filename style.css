@@ -1,0 +1,120 @@
+/* style.css */
+
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212; /* Off-black background */
+    color: #F0F0F0; /* Pearl-white text */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: #1E1E1E;
+    padding: 1em 2em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #F0F0F0;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+}
+
+nav .nav-links li {
+    margin-left: 1.5em;
+}
+
+nav .nav-links a {
+    text-decoration: none;
+    color: #F0F0F0;
+    font-weight: bold;
+}
+
+nav .nav-links a:hover {
+    color: #FFCC00; /* Accent color */
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.hero-content p {
+    font-size: 1.5em;
+}
+
+/* Portrait Container using Rule of Thirds */
+.portrait-container {
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 25%;
+}
+
+.portrait-container img {
+    width: 100%;
+    border-radius: 50%;
+    border: 5px solid #F0F0F0;
+}
+
+/* Projects Section */
+#projects {
+    padding: 4em 2em;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 2em;
+    color: #F0F0F0;
+}
+
+.chart {
+    margin: 2em auto;
+    width: 80%;
+    max-width: 600px;
+}
+
+/* React-Vis Overrides */
+.rv-xy-plot__axis__tick__line {
+    stroke: #F0F0F0;
+}
+
+.rv-xy-plot__axis__tick__text {
+    fill: #F0F0F0;
+    font-weight: bold;
+}
+
+.rv-xy-plot__axis__title text {
+    fill: #F0F0F0;
+    font-weight: bold;
+}
+
+.rv-xy-plot__grid-lines__line {
+    stroke: #2E2E2E;
+}
+
