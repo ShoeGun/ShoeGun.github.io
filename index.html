@@ -42,6 +42,7 @@
       background: rgba(0, 0, 0, 0.5);
       color: white;
       padding: 100px 0;
+      background-attachment: fixed;
     }
     .hero-section h1 {
       font-size: 3.5rem;
@@ -90,6 +91,15 @@
     }
     #about img {
       border: 5px solid #ff7f50;
+      margin-bottom: 20px;
+    }
+    .parallax {
+      background-image: url('path/to/your/background.jpg');
+      min-height: 400px;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     footer {
       background-color: #343a40;
@@ -138,6 +148,9 @@
       <p class="lead">Showcasing my work in web development and data analytics.</p>
     </div>
   </section>
+
+  <!-- Parallax Section -->
+  <div class="parallax"></div>
 
   <!-- Projects Section -->
   <section id="projects" class="py-5">
@@ -198,6 +211,19 @@
         </div>
         <div class="col-md-8">
           <p>Hello! I'm <strong>Your Name</strong>, a web developer and data analyst with a passion for creating insightful analytics dashboards and web applications. I have experience in technologies such as HTML, CSS, JavaScript, Google Analytics, and more. Through my projects, I aim to help businesses make data-driven decisions.</p>
+          <div class="mt-4">
+            <h5>Fun Facts About Me:</h5>
+            <ul>
+              <li>Love hiking and exploring new trails.</li>
+              <li>Avid coffee enthusiast and amateur barista.</li>
+              <li>Once built a fully functional robot for a local competition.</li>
+            </ul>
+          </div>
+          <div class="mt-4">
+            <h5>Old Work Memories:</h5>
+            <img src="path/to/your/old-work-photo1.jpg" class="img-fluid mb-3" alt="Old Work Photo 1">
+            <img src="path/to/your/old-work-photo2.jpg" class="img-fluid" alt="Old Work Photo 2">
+          </div>
         </div>
       </div>
     </div>
@@ -244,88 +270,4 @@
           <h5>Get in Touch</h5>
           <p>You can reach me via email or connect with me on social media platforms.</p>
           <ul class="list-unstyled">
-            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
-            <li><strong>Phone:</strong> (123) 456-7890</li>
-          </ul>
-          <div class="social-icons">
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="bi bi-linkedin"></i></a>
-            <a href="https://github.com/yourusername" target="_blank"><i class="bi bi-github"></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS CDN -->
-  <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-CkzE/M4AKSXBxi/SjVrhUBUNWd5Qjz0CoFVcE12UHMBMEpMOE5MhH/xZAyoJtrac"
-    crossorigin="anonymous"
-  ></script>
-  <!-- Icon Library (Bootstrap Icons) -->
-  <link
-    rel="stylesheet"
-    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
-  >
-  <!-- Custom JS for Footer Year Update and Charts -->
-  <script>
-    // Update footer year dynamically
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Mock Charts using Chart.js
-    const ctx1 = document.getElementById('chart1').getContext('2d');
-    const ctx2 = document.getElementById('chart2').getContext('2d');
-
-    const chart1 = new Chart(ctx1, {
-      type: 'bar',
-      data: {
-        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
-        datasets: [{
-          label: 'Monthly Sales',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: 'rgba(255, 127, 80, 0.6)',
-          borderColor: 'rgba(255, 127, 80, 1)',
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-    const chart2 = new Chart(ctx2, {
-      type: 'line',
-      data: {
-        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        datasets: [{
-          label: 'Website Visitors',
-          data: [150, 200, 180, 220, 170, 190, 250],
-          backgroundColor: 'rgba(30, 144, 255, 0.2)',
-          borderColor: 'rgba(30, 144, 255, 1)',
-          borderWidth: 2
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  </script>
-</body>
-</html>
+            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li
