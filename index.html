@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Richard Jones Portfolio</title>
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/vizx"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@nivo/bar"></script>
+    <!-- Vizx Library (Assumed CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/vizx@latest/dist/vizx.min.js"></script>
+    <!-- Nivo.js Library (Assumed CDN) -->
+    <!-- Note: Nivo is typically React-based. For this example, we'll use a simple Nivo-like library -->
+    <script src="https://cdn.jsdelivr.net/npm/nivo@latest/dist/nivo.min.js"></script>
 </head>
 <body>
     <header>
@@ -29,18 +33,18 @@
 
     <section id="projects">
         <h2>Featured Projects</h2>
-
+        
         <!-- Vizx Example -->
         <div id="vizxExample" class="project-card">
             <h3>Data Visualization with Vizx</h3>
-            <p>This is an example using Vizx to create an interactive and responsive chart with random data that updates every 5 seconds.</p>
-            <div id="vizxChart" style="height: 300px;"></div>
+            <p>This example uses Vizx to create an interactive and responsive line chart.</p>
+            <canvas id="vizxChart" width="400" height="200"></canvas>
         </div>
 
         <!-- Nivo Example -->
         <div id="nivoExample" class="project-card">
             <h3>Interactive Charts with Nivo</h3>
-            <p>Check out this example using Nivo for a bar chart visualization with random data that updates every 5 seconds.</p>
+            <p>This example uses Nivo for a dynamic bar chart visualization.</p>
             <div id="nivoChart" style="height: 300px;"></div>
         </div>
     </section>
@@ -66,50 +70,7 @@
         <p>© 2024 Richard Jones. All rights reserved.</p>
     </footer>
 
-    <!-- Vizx Script -->
-    <script>
-        const vizxChartElement = document.getElementById('vizxChart');
-
-        function generateRandomDataVizx() {
-            const data = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
-            Vizx.chart(vizxChartElement, {
-                type: 'line',
-                data: data
-            });
-        }
-
-        setInterval(generateRandomDataVizx, 5000);  // Update every 5 seconds
-
-        generateRandomDataVizx(); // Initial call to render the chart
-    </script>
-
-    <!-- Nivo Script -->
-    <script>
-        const nivoChartElement = document.getElementById('nivoChart');
-
-        function generateRandomDataNivo() {
-            const nivoData = [
-                { "country": "USA", "value": Math.floor(Math.random() * 100) },
-                { "country": "Germany", "value": Math.floor(Math.random() * 100) },
-                { "country": "Japan", "value": Math.floor(Math.random() * 100) }
-            ];
-
-            Nivo.Bar({
-                data: nivoData,
-                keys: ['value'],
-                indexBy: 'country',
-                margin: { top: 50, right: 130, bottom: 50, left: 60 },
-                padding: 0.3,
-                layout: 'vertical',
-                colors: { scheme: 'nivo' },
-                width: nivoChartElement.offsetWidth,
-                height: nivoChartElement.offsetHeight
-            }).render(nivoChartElement);
-        }
-
-        setInterval(generateRandomDataNivo, 5000);  // Update every 5 seconds
-
-        generateRandomDataNivo(); // Initial call to render the chart
-    </script>
+    <!-- Link to JavaScript -->
+    <script src="main.js"></script>
 </body>
 </html>
