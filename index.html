@@ -21,29 +21,29 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(-45deg, #a2c4c9, #d9e4dd, #e8d0b3, #c7b198);
+      background: linear-gradient(-45deg, #4b4b4b, #5a5a5a, #6b705c, #264653);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
       color: #333;
     }
     .navbar {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(38, 70, 83, 0.9);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .navbar-brand {
       font-weight: bold;
-      color: #5a5a5a !important;
+      color: #e9c46a !important;
     }
     .navbar-nav .nav-link {
       font-weight: 500;
-      color: #5a5a5a !important;
+      color: #f4a261 !important;
       transition: color 0.3s;
     }
     .navbar-nav .nav-link:hover {
-      color: #6b705c !important;
+      color: #e76f51 !important;
     }
     .hero-section {
-      background: rgba(106, 123, 123, 0.5);
+      background: rgba(38, 70, 83, 0.8);
       color: white;
       padding: 100px 0;
       background-attachment: fixed;
@@ -61,7 +61,7 @@
       border: none;
       border-radius: 10px;
       overflow: hidden;
-      background: linear-gradient(to bottom right, #f0efeb, #d6ccc2);
+      background: linear-gradient(to bottom right, #e6e6e6, #b8b8b8);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .project-card img {
@@ -73,7 +73,7 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     .card-title {
-      color: #6b705c;
+      color: #264653;
       font-weight: bold;
     }
     .card-footer {
@@ -82,12 +82,12 @@
       text-align: center;
     }
     .btn-primary {
-      background-color: #6b705c;
+      background-color: #264653;
       border: none;
       transition: background-color 0.3s;
     }
     .btn-primary:hover {
-      background-color: #a5a58d;
+      background-color: #2a9d8f;
     }
     #about {
       background: rgba(255, 255, 255, 0.9);
@@ -96,22 +96,60 @@
       padding: 50px;
     }
     #about img {
-      border: 5px solid #6b705c;
+      border: 5px solid #264653;
       margin-bottom: 20px;
     }
-    .parallax {
-      background-image: url('path/to/your/background.jpg');
-      min-height: 400px;
-      background-attachment: fixed;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
+    .scroll-effect-grid {
+      position: relative;
+      min-height: 300px;
+      margin: 50px 0;
+      background: linear-gradient(45deg, #6b705c 25%, transparent 25%, transparent 75%, #6b705c 75%, #6b705c),
+                  linear-gradient(45deg, #6b705c 25%, transparent 25%, transparent 75%, #6b705c 75%, #6b705c);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+    }
+    .scroll-effect-grid::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(38, 70, 83, 0.8);
+      mix-blend-mode: overlay;
+      pointer-events: none;
     }
     .chart-container {
       background: rgba(240, 239, 235, 0.95);
       border-radius: 15px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       padding: 20px;
+    }
+    .testimonial-section {
+      padding: 80px 0;
+      background: linear-gradient(to top, #e8e6e3, #b8b8b8);
+      color: #333;
+    }
+    .testimonial-card {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
+    .services-section {
+      padding: 80px 0;
+      background: #e6e6e6;
+    }
+    .service-card {
+      background: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
     }
     footer {
       background-color: #343a40;
@@ -128,7 +166,7 @@
       transition: color 0.3s;
     }
     .social-icons a:hover {
-      color: #a5a58d;
+      color: #e9c46a;
     }
     /* Media Queries for Mobile Responsiveness */
     @media (max-width: 768px) {
@@ -166,6 +204,8 @@
         <ul class="navbar-nav">
           <li class="nav-item"><a class="nav-link active" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
         </ul>
       </div>
@@ -175,115 +215,4 @@
   <!-- Hero Section -->
   <section class="hero-section text-center">
     <div class="container">
-      <h1 class="display-4">Web Analytics Portfolio</h1>
-      <p class="lead">Showcasing my work in web development and data analytics.</p>
-    </div>
-  </section>
-
-  <!-- Parallax Section -->
-  <div class="parallax"></div>
-
-  <!-- Projects Section -->
-  <section id="projects" class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center">My Projects</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4">
-        <!-- Project Card 1 -->
-        <div class="col">
-          <div class="card h-100 project-card">
-            <img src="path/to/your/image1.jpg" class="card-img-top" alt="Project Image">
-            <div class="card-body">
-              <h5 class="card-title">Project Title 1</h5>
-              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
-            </div>
-            <div class="card-footer">
-              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 2 -->
-        <div class="col">
-          <div class="card h-100 project-card">
-            <img src="path/to/your/image2.jpg" class="card-img-top" alt="Project Image">
-            <div class="card-body">
-              <h5 class="card-title">Project Title 2</h5>
-              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
-            </div>
-            <div class="card-footer">
-              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
-            </div>
-          </div>
-        </div>
-        <!-- Project Card 3 -->
-        <div class="col">
-          <div class="card h-100 project-card">
-            <img src="path/to/your/image3.jpg" class="card-img-top" alt="Project Image">
-            <div class="card-body">
-              <h5 class="card-title">Project Title 3</h5>
-              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
-            </div>
-            <div class="card-footer">
-              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
-            </div>
-          </div>
-        </div>
-        <!-- Add more project cards as needed -->
-      </div>
-    </div>
-  </section>
-
-  <!-- About Me Section -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center">About Me</h2>
-      <div class="row">
-        <div class="col-md-4 text-center">
-          <img src="path/to/your/profile.jpg" class="rounded-circle img-fluid" alt="Your Name">
-        </div>
-        <div class="col-md-8">
-          <p>Hello! I'm <strong>Your Name</strong>, a web developer and data analyst with a passion for creating insightful analytics dashboards and web applications. I have experience in technologies such as HTML, CSS, JavaScript, Google Analytics, and more. Through my projects, I aim to help businesses make data-driven decisions.</p>
-          <div class="mt-4">
-            <h5>Fun Facts About Me:</h5>
-            <ul>
-              <li>Love hiking and exploring new trails.</li>
-              <li>Avid coffee enthusiast and amateur barista.</li>
-              <li>Once built a fully functional robot for a local competition.</li>
-            </ul>
-          </div>
-          <div class="mt-4">
-            <h5>Old Work Memories:</h5>
-            <img src="path/to/your/old-work-photo1.jpg" class="img-fluid mb-3" alt="Old Work Photo 1">
-            <img src="path/to/your/old-work-photo2.jpg" class="img-fluid" alt="Old Work Photo 2">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Analytics Section with Mock Charts -->
-  <section id="analytics" class="py-5">
-    <div class="container chart-container">
-      <h2 class="mb-5 text-center">Analytics Examples</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <canvas id="chart1"></canvas>
-        </div>
-        <div class="col-md-6">
-          <canvas id="chart2"></canvas>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center">Contact Me</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <form action="https://formspree.io/f/your-form-id" method="POST">
-            <div class="mb-3">
-              <label for="name" class="form-label">Your Name</label>
-              <input type="text" name="name" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
+      <h1 class="display-4">
