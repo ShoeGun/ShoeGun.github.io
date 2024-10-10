@@ -27,53 +27,53 @@
       color: #333;
     }
     .navbar {
-      background-color: #264653;
+      background-color: #1d3557;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       padding: 10px 20px;
     }
     .navbar-brand {
       font-weight: bold;
-      color: #e9c46a !important;
+      color: #f4a261 !important;
       font-size: 1.8rem;
       transition: color 0.3s;
     }
     .navbar-brand:hover {
-      color: #f4a261 !important;
+      color: #e76f51 !important;
     }
     .navbar-nav {
       margin-left: auto;
       margin-right: auto;
       display: flex;
-      gap: 20px;
+      gap: 15px;
     }
     .navbar-nav .nav-link {
       font-weight: 500;
-      color: #f4a261 !important;
+      color: #a8dadc !important;
       transition: color 0.3s, transform 0.3s;
-      padding: 10px 20px;
+      padding: 10px;
       border-radius: 5px;
     }
     .navbar-nav .nav-link:hover {
-      color: #e76f51 !important;
+      color: #f4a261 !important;
       transform: translateY(-2px);
       background-color: rgba(255, 255, 255, 0.1);
     }
     .navbar-toggler {
       border: none;
-      background-color: #e9c46a;
+      background-color: #f4a261;
     }
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     }
     .btn-nav {
-      background-color: #2a9d8f;
+      background-color: #457b9d;
       color: #ffffff;
       border-radius: 20px;
       padding: 5px 15px;
       transition: background-color 0.3s, box-shadow 0.3s;
     }
     .btn-nav:hover {
-      background-color: #e76f51;
+      background-color: #e63946;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .hero-section {
@@ -98,7 +98,7 @@
       border: none;
       border-radius: 10px;
       overflow: hidden;
-      background: linear-gradient(to bottom right, #e6e6e6, #b8b8b8);
+      background: linear-gradient(to bottom right, #f1faee, #a8dadc);
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .project-card img {
@@ -110,16 +110,16 @@
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     }
     .card-title {
-      color: #264653;
+      color: #1d3557;
       font-weight: bold;
     }
     .card-footer {
-      background-color: #e8eddf;
+      background-color: #f1faee;
       border-top: none;
       text-align: center;
     }
     .btn-primary {
-      background-color: #264653;
+      background-color: #457b9d;
       border: none;
       transition: background-color 0.3s;
     }
@@ -127,13 +127,13 @@
       background-color: #2a9d8f;
     }
     #about {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       border-radius: 15px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       padding: 50px;
     }
     #about img {
-      border: 5px solid #264653;
+      border: 5px solid #457b9d;
       margin-bottom: 20px;
     }
     .scroll-effect-grid {
@@ -164,7 +164,7 @@
     }
     .testimonial-section {
       padding: 80px 0;
-      background: linear-gradient(to top, #e8e6e3, #b8b8b8);
+      background: linear-gradient(to top, #f1faee, #a8dadc);
       color: #333;
     }
     .testimonial-card {
@@ -203,7 +203,7 @@
       transition: color 0.3s;
     }
     .social-icons a:hover {
-      color: #e9c46a;
+      color: #e63946;
     }
     /* Media Queries for Mobile Responsiveness */
     @media (max-width: 768px) {
@@ -255,13 +255,28 @@
   <!-- Hero Section -->
   <section class="hero-section text-center">
     <div class="container">
-      <h1 class="display-4">Web Analytics Portfolio</h1>
+      <h1 class="display-4">Richard Jones' Web Analytics Portfolio</h1>
       <p class="lead">Showcasing my work in data analysis, web development, and operational insights.</p>
     </div>
   </section>
 
-  <!-- Parallax Section -->
-  <div class="parallax"></div>
+  <!-- About Me Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">About Me</h2>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="path/to/your/profile.jpg" class="rounded-circle img-fluid" alt="Richard Jones">
+        </div>
+        <div class="col-md-8">
+          <p>Hello! I'm <strong>Richard Jones</strong>, an operations specialist, data analyst, and web developer with over 10 years of experience. My expertise lies in utilizing technology to drive operational efficiency and create data-driven insights that help businesses grow. I've worked with various industries, including banking, consumer, and government sectors, and freelanced as a consultant.</p>
+          <div class="mt-4">
+            <a href="https://www.linkedin.com/in/richardjones2020/" target="_blank" class="btn btn-primary">Connect with me on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- Projects Section -->
   <section id="projects" class="py-5">
@@ -296,78 +311,4 @@
         </div>
         <!-- Project Card 3: Altitude Monitoring App -->
         <div class="col">
-          <div class="card h-100 project-card">
-            <img src="path/to/altitude-monitoring-image.jpg" class="card-img-top" alt="Altitude Monitoring App">
-            <div class="card-body">
-              <h5 class="card-title">Real-Time Altitude Monitoring App</h5>
-              <p class="card-text">Freelance app development for real-time altitude monitoring and geo-spatial analytics, providing valuable data for clients.</p>
-            </div>
-            <div class="card-footer">
-              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Me Section -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center">About Me</h2>
-      <div class="row">
-        <div class="col-md-4 text-center">
-          <img src="path/to/your/profile.jpg" class="rounded-circle img-fluid" alt="Richard Jones">
-        </div>
-        <div class="col-md-8">
-          <p>Hello! I'm <strong>Richard Jones</strong>, an operations specialist, data analyst, and web developer with over 10 years of experience. My expertise lies in utilizing technology to drive operational efficiency and create data-driven insights that help businesses grow. I've worked with various industries, including banking, consumer, and government sectors, and freelanced as a consultant.</p>
-          <div class="scroll-effect-grid"></div>
-          <div class="mt-4">
-            <h5>Fun Facts About Me:</h5>
-            <ul>
-              <li>Love hiking and exploring new trails.</li>
-              <li>Avid coffee enthusiast and amateur barista.</li>
-              <li>Once built a fully functional robot for a local competition.</li>
-            </ul>
-          </div>
-          <div class="mt-4">
-            <h5>Old Work Memories:</h5>
-            <img src="path/to/your/old-work-photo1.jpg" class="img-fluid mb-3" alt="Old Work Photo 1">
-            <img src="path/to/your/old-work-photo2.jpg" class="img-fluid" alt="Old Work Photo 2">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Analytics Section with Mock Charts -->
-  <section id="analytics" class="py-5">
-    <div class="container chart-container">
-      <h2 class="mb-5 text-center">Analytics Examples</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <h5 class="text-center">Workforce Planning</h5>
-          <canvas id="chart1"></canvas>
-        </div>
-        <div class="col-md-6">
-          <h5 class="text-center">Customer Satisfaction Analysis</h5>
-          <canvas id="chart2"></canvas>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-5">
-    <div class="container">
-      <h2 class="mb-5 text-center">Contact Me</h2>
-      <div class="row">
-        <div class="col-md-6">
-          <form action="https://formspree.io/f/your-form-id" method="POST">
-            <div class="mb-3">
-              <label for="name" class="form-label">Your Name</label>
-              <input type="text" class="form-control" id="name" name="name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Your Email</label>
-              <input type="email" class="form-control"
+          <div
