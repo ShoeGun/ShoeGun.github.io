@@ -237,7 +237,7 @@
               </button>
               <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul className="navbar-nav">
-                  <li className="nav-item"><a className="nav-link active" href="#projects">Projects</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
                   <li className="nav-item"><a className="nav-link" href="#about">About Me</a></li>
                   <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
                   <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
@@ -380,4 +380,54 @@
   </section>
 
   <!-- Footer Section -->
-  <footer
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2024 Richard Jones. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/richardjones2020/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chart.js Script for Mock Charts -->
+  <script>
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    const chart1 = new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Workforce Planning',
+          data: [30, 50, 40, 60, 70, 90, 100],
+          borderColor: '#4f5d75',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    const chart2 = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [{
+          label: 'Customer Satisfaction',
+          data: [85, 90, 80, 95],
+          backgroundColor: '#ef8354',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+  </script>
+
+</body>
+</html>
