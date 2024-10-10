@@ -13,14 +13,22 @@
   >
   <!-- Custom CSS -->
   <style>
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
     body {
       font-family: 'Roboto', sans-serif;
-      background-color: #f0f2f5;
+      background: linear-gradient(-45deg, #ff7f50, #ff6347, #1e90ff, #ff1493);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
       color: #333;
     }
     .navbar-brand {
       font-weight: bold;
-      color: #ff7f50 !important;
+      color: #ffffff !important;
     }
     .navbar-nav .nav-link {
       font-weight: 500;
@@ -31,7 +39,7 @@
       color: #ff7f50 !important;
     }
     .hero-section {
-      background: linear-gradient(to right, #ff7f50, #ff6347);
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       padding: 100px 0;
     }
@@ -75,7 +83,7 @@
       background-color: #ff6347;
     }
     #about {
-      background: #ffffff;
+      background: rgba(255, 255, 255, 0.8);
       border-radius: 15px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       padding: 50px;
@@ -101,6 +109,8 @@
       color: #ff7f50;
     }
   </style>
+  <!-- Chart.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -193,6 +203,21 @@
     </div>
   </section>
 
+  <!-- Analytics Section with Mock Charts -->
+  <section id="analytics" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="mb-5 text-center">Analytics Examples</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <canvas id="chart1"></canvas>
+        </div>
+        <div class="col-md-6">
+          <canvas id="chart2"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact" class="py-5">
     <div class="container">
@@ -249,10 +274,58 @@
     rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
   >
-  <!-- Custom JS -->
+  <!-- Custom JS for Footer Year Update and Charts -->
   <script>
     // Update footer year dynamically
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mock Charts using Chart.js
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+
+    const chart1 = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+          label: 'Monthly Sales',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: 'rgba(255, 127, 80, 0.6)',
+          borderColor: 'rgba(255, 127, 80, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const chart2 = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [{
+          label: 'Website Visitors',
+          data: [150, 200, 180, 220, 170, 190, 250],
+          backgroundColor: 'rgba(30, 144, 255, 0.2)',
+          borderColor: 'rgba(30, 144, 255, 1)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
   </script>
 </body>
 </html>
