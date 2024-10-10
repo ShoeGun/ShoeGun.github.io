@@ -21,32 +21,61 @@
 
     body {
       font-family: 'Roboto', sans-serif;
-      background: linear-gradient(-45deg, #4b4b4b, #5a5a5a, #6b705c, #264653);
+      background: linear-gradient(-45deg, #3b3b3b, #505050, #6b705c, #264653);
       background-size: 400% 400%;
       animation: gradient 15s ease infinite;
       color: #333;
     }
     .navbar {
-      background-color: rgba(38, 70, 83, 0.9);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #264653;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      padding: 10px 20px;
     }
     .navbar-brand {
       font-weight: bold;
       color: #e9c46a !important;
+      font-size: 1.8rem;
+      transition: color 0.3s;
+    }
+    .navbar-brand:hover {
+      color: #f4a261 !important;
     }
     .navbar-nav .nav-link {
       font-weight: 500;
       color: #f4a261 !important;
-      transition: color 0.3s;
+      margin-right: 15px;
+      transition: color 0.3s, transform 0.3s;
     }
     .navbar-nav .nav-link:hover {
       color: #e76f51 !important;
+      transform: scale(1.1);
+    }
+    .navbar-toggler {
+      border: none;
+      background-color: #e9c46a;
+    }
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+    .btn-nav {
+      background-color: #2a9d8f;
+      color: #ffffff;
+      border-radius: 20px;
+      padding: 5px 15px;
+      transition: background-color 0.3s, box-shadow 0.3s;
+    }
+    .btn-nav:hover {
+      background-color: #e76f51;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .hero-section {
-      background: rgba(38, 70, 83, 0.8);
+      background: rgba(38, 70, 83, 0.9);
       color: white;
       padding: 100px 0;
       background-attachment: fixed;
+      background-image: url('path/to/hero-background.jpg');
+      background-size: cover;
+      background-blend-mode: multiply;
     }
     .hero-section h1 {
       font-size: 3.5rem;
@@ -179,6 +208,10 @@
       .navbar-nav {
         text-align: center;
       }
+      .navbar-nav .nav-link {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
       .project-card {
         margin-bottom: 20px;
       }
@@ -207,6 +240,7 @@
           <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
           <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-nav" href="#dashboard">Dashboard</a></li>
         </ul>
       </div>
     </div>
@@ -215,4 +249,82 @@
   <!-- Hero Section -->
   <section class="hero-section text-center">
     <div class="container">
-      <h1 class="display-4">
+      <h1 class="display-4">Web Analytics Portfolio</h1>
+      <p class="lead">Showcasing my work in web development and data analytics.</p>
+    </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <div class="parallax"></div>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">My Projects</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Project Card 1 -->
+        <div class="col">
+          <div class="card h-100 project-card">
+            <img src="path/to/your/image1.jpg" class="card-img-top" alt="Project Image">
+            <div class="card-body">
+              <h5 class="card-title">Project Title 1</h5>
+              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 2 -->
+        <div class="col">
+          <div class="card h-100 project-card">
+            <img src="path/to/your/image2.jpg" class="card-img-top" alt="Project Image">
+            <div class="card-body">
+              <h5 class="card-title">Project Title 2</h5>
+              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 3 -->
+        <div class="col">
+          <div class="card h-100 project-card">
+            <img src="path/to/your/image3.jpg" class="card-img-top" alt="Project Image">
+            <div class="card-body">
+              <h5 class="card-title">Project Title 3</h5>
+              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">About Me</h2>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="path/to/your/profile.jpg" class="rounded-circle img-fluid" alt="Your Name">
+        </div>
+        <div class="col-md-8">
+          <p>Hello! I'm <strong>Your Name</strong>, a web developer and data analyst with a passion for creating insightful analytics dashboards and web applications. I have experience in technologies such as HTML, CSS, JavaScript, Google Analytics, and more. Through my projects, I aim to help businesses make data-driven decisions.</p>
+          <div class="scroll-effect-grid"></div>
+          <div class="mt-4">
+            <h5>Fun Facts About Me:</h5>
+            <ul>
+              <li>Love hiking and exploring new trails.</li>
+              <li>Avid coffee enthusiast and amateur barista.</li>
+              <li>Once built a fully functional robot for a local competition.</li>
+            </ul>
+          </div>
+          <div class="mt-4">
+            <h5>Old Work Memories:</h5>
+            <img src="path/to/your/old-work-photo1.jpg" class="img-fluid mb-3" alt="
