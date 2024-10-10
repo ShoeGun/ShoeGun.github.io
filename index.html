@@ -57,6 +57,8 @@
       border: none;
       border-radius: 10px;
       overflow: hidden;
+      background: linear-gradient(to bottom right, #f7f7f7, #e2e2e2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     .project-card img {
       border-top-left-radius: 10px;
@@ -84,7 +86,7 @@
       background-color: #ff6347;
     }
     #about {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 15px;
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
       padding: 50px;
@@ -270,4 +272,88 @@
           <h5>Get in Touch</h5>
           <p>You can reach me via email or connect with me on social media platforms.</p>
           <ul class="list-unstyled">
-            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li
+            <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li><strong>Phone:</strong> (123) 456-7890</li>
+          </ul>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/yourusername" target="_blank"><i class="bi bi-github"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS CDN -->
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-CkzE/M4AKSXBxi/SjVrhUBUNWd5Qjz0CoFVcE12UHMBMEpMOE5MhH/xZAyoJtrac"
+    crossorigin="anonymous"
+  ></script>
+  <!-- Icon Library (Bootstrap Icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  >
+  <!-- Custom JS for Footer Year Update and Charts -->
+  <script>
+    // Update footer year dynamically
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mock Charts using Chart.js
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+
+    const chart1 = new Chart(ctx1, {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June'],
+        datasets: [{
+          label: 'Monthly Sales',
+          data: [12, 19, 3, 5, 2, 3],
+          backgroundColor: 'rgba(255, 127, 80, 0.8)',
+          borderColor: 'rgba(255, 127, 80, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+
+    const chart2 = new Chart(ctx2, {
+      type: 'line',
+      data: {
+        labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        datasets: [{
+          label: 'Website Visitors',
+          data: [150, 200, 180, 220, 170, 190, 250],
+          backgroundColor: 'rgba(30, 144, 255, 0.4)',
+          borderColor: 'rgba(30, 144, 255, 1)',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
