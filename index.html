@@ -32,9 +32,15 @@
       color: #333;
     }
     .navbar {
-      background-color: #2d3142;
+      background: linear-gradient(-45deg, #2d3142, #4f5d75, #bfc0c0, #ef8354);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
       padding: 10px 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -62,6 +68,7 @@
       transition: color 0.3s, transform 0.3s;
       padding: 10px;
       border-radius: 5px;
+      text-decoration: none;
     }
     .nav-link:hover {
       color: #ef8354;
@@ -87,6 +94,7 @@
       background-image: url('path/to/hero-background.jpg');
       background-size: cover;
       background-blend-mode: multiply;
+      margin-top: 60px;
     }
     .hero-section h1 {
       font-size: 3.5rem;
@@ -221,6 +229,9 @@
         text-align: center;
         gap: 10px;
       }
+      .navbar {
+        position: static;
+      }
       .project-card {
         margin-bottom: 20px;
       }
@@ -237,4 +248,211 @@
   <!-- React Navigation Bar -->
   <div id="navbar"></div>
   <script type="text/babel">
-    class
+    class Navbar extends React.Component {
+      render() {
+        return (
+          <nav className="navbar navbar-expand-lg">
+            <div className="container">
+              <a className="navbar-brand" href="#">
+                <img src="path/to/your/profile.jpg" alt="Richard Jones" />
+                Richard Jones
+              </a>
+              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul className="navbar-nav">
+                  <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#about">About Me</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
+                  <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+                  <li className="nav-item"><a className="btn btn-nav" href="#dashboard">Dashboard</a></li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        );
+      }
+    }
+
+    ReactDOM.render(<Navbar />, document.getElementById('navbar'));
+  </script>
+
+  <!-- Hero Section -->
+  <section class="hero-section text-center">
+    <div class="container">
+      <h1 class="display-4">Richard Jones' Web Analytics Portfolio</h1>
+      <p class="lead">Showcasing my work in data analysis, web development, and operational insights.</p>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">About Me</h2>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <img src="path/to/your/profile.jpg" class="rounded-circle img-fluid" alt="Richard Jones">
+        </div>
+        <div class="col-md-8">
+          <p>Hello! I'm <strong>Richard Jones</strong>, an operations specialist, data analyst, and web developer with over 10 years of experience. My expertise lies in utilizing technology to drive operational efficiency and create data-driven insights that help businesses grow. I've worked with various industries, including banking, consumer, and government sectors, and freelanced as a consultant.</p>
+          <div class="mt-4">
+            <a href="https://www.linkedin.com/in/richardjones2020/" target="_blank" class="btn btn-primary">Connect with me on LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">My Projects</h2>
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <!-- Project Card 1: Exception Tracking Database -->
+        <div class="col">
+          <div class="card h-100 project-card">
+            <img src="path/to/exception-tracking-image.jpg" class="card-img-top" alt="Exception Tracking Database">
+            <div class="card-body">
+              <h5 class="card-title">Exception Tracking Database</h5>
+              <p class="card-text">Developed a database to increase adherence and reduce workload for leadership teams, improving efficiency across operations.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 2: Authentication Database -->
+        <div class="col">
+          <div class="card h-100 project-card">
+            <img src="path/to/authentication-image.jpg" class="card-img-top" alt="Authentication Database">
+            <div class="card-body">
+              <h5 class="card-title">Authentication Database</h5>
+              <p class="card-text">Created a secure database to verify check information from other banks, enhancing financial security and fraud prevention.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+        <!-- Project Card 3: Altitude Monitoring App -->
+        <div class="col">
+          <div class="card h-100 project-card">
+            <img src="path/to/altitude-monitoring-image.jpg" class="card-img-top" alt="Altitude Monitoring App">
+            <div class="card-body">
+              <h5 class="card-title">Real-Time Altitude Monitoring App</h5>
+              <p class="card-text">Freelance app development for real-time altitude monitoring and geo-spatial analytics, providing valuable data for clients.</p>
+            </div>
+            <div class="card-footer">
+              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Analytics Section with Mock Charts -->
+  <section id="analytics" class="py-5">
+    <div class="container chart-container">
+      <h2 class="mb-5 text-center">Analytics Examples</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <h5 class="text-center">Workforce Planning</h5>
+          <canvas id="chart1"></canvas>
+        </div>
+        <div class="col-md-6">
+          <h5 class="text-center">Customer Satisfaction Analysis</h5>
+          <canvas id="chart2"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <h2 class="mb-5 text-center">Contact Me</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <form action="https://formspree.io/f/your-form-id" method="POST">
+            <div class="mb-3">
+              <label for="name" class="form-label">Your Name</label>
+              <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Your Email</label>
+              <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <h5>Email:</h5>
+          <p>RichardX13@gmail.com</p>
+          <h5>Phone:</h5>
+          <p>(415) 697-4734</p>
+          <h5>LinkedIn:</h5>
+          <p><a href="https://www.linkedin.com/in/richardjones2020/" target="_blank">Richard Jones on LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2024 Richard Jones. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/richardjones2020/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chart.js Script for Mock Charts -->
+  <script>
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    const chart1 = new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Workforce Planning',
+          data: [30, 50, 40, 60, 70, 90, 100],
+          borderColor: '#4f5d75',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    const chart2 = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [{
+          label: 'Customer Satisfaction',
+          data: [85, 90, 80, 95],
+          backgroundColor: '#ef8354',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+  </script>
+
+</body>
+</html>
