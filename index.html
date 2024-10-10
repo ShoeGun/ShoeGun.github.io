@@ -43,24 +43,13 @@
       z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
     }
-    .navbar-brand {
-      font-weight: bold;
-      color: #ffffff;
-      font-size: 1.8rem;
-      transition: color 0.3s;
+    .navbar-nav {
       display: flex;
-      align-items: center;
-    }
-    .navbar-brand img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-    .navbar-brand:hover {
-      color: #ef8354;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px;
     }
     .nav-link {
       font-weight: 500;
@@ -87,14 +76,13 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
     .hero-section {
-      background: rgba(45, 49, 66, 0.9);
+      background: linear-gradient(-45deg, #2d3142, #4f5d75, #bfc0c0, #ef8354);
+      background-size: 400% 400%;
+      animation: gradient 15s ease infinite;
       color: white;
       padding: 100px 0;
-      background-attachment: fixed;
-      background-image: url('path/to/hero-background.jpg');
-      background-size: cover;
-      background-blend-mode: multiply;
       margin-top: 60px;
+      text-align: center;
     }
     .hero-section h1 {
       font-size: 3.5rem;
@@ -253,13 +241,6 @@
         return (
           <nav className="navbar navbar-expand-lg">
             <div className="container">
-              <a className="navbar-brand" href="#">
-                <img src="path/to/your/profile.jpg" alt="Richard Jones" />
-                Richard Jones
-              </a>
-              <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span className="navbar-toggler-icon"></span>
-              </button>
               <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul className="navbar-nav">
                   <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
@@ -280,7 +261,7 @@
   </script>
 
   <!-- Hero Section -->
-  <section class="hero-section text-center">
+  <section class="hero-section">
     <div class="container">
       <h1 class="display-4">Richard Jones' Web Analytics Portfolio</h1>
       <p class="lead">Showcasing my work in data analysis, web development, and operational insights.</p>
