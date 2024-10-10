@@ -11,23 +11,53 @@
     integrity="sha384-KE6XQt34XBPlCZGxFMRJNu8geYO9b4Pk3cJgDxwz1B8P3jIKjVKc+jCk/Xm0E5PG"
     crossorigin="anonymous"
   >
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <!-- Custom CSS -->
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
     }
     .navbar-brand {
-      font-weight: bold;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
     }
     .hero-section {
-      background-color: #f8f9fa;
-      padding: 60px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #ffffff;
+      padding: 100px 0;
+      text-align: center;
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-section h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero-section p {
+      font-size: 1.2rem;
     }
     .project-card {
-      transition: transform 0.2s;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
     .project-card:hover {
-      transform: scale(1.02);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    .about-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+    }
+    .about-section img {
+      max-width: 250px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+    .contact-section {
+      padding: 60px 0;
     }
     footer {
       background-color: #343a40;
@@ -38,17 +68,39 @@
       color: #ffffff;
       margin: 0 10px;
       font-size: 24px;
-      transition: color 0.2s;
+      transition: color 0.3s;
     }
     .social-icons a:hover {
       color: #adb5bd;
+    }
+    /* Custom Buttons */
+    .btn-primary {
+      background-color: #667eea;
+      border-color: #667eea;
+      transition: background-color 0.3s, border-color 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #5a67d8;
+      border-color: #5a67d8;
+    }
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .hero-section {
+        padding: 60px 0;
+      }
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+      .hero-section p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
 
   <!-- Navigation Bar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
     <div class="container">
       <a class="navbar-brand" href="#">Your Name</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -65,10 +117,11 @@
   </nav>
 
   <!-- Hero Section -->
-  <section class="hero-section text-center">
+  <section class="hero-section d-flex align-items-center">
     <div class="container">
       <h1 class="display-4">Web Analytics Portfolio</h1>
-      <p class="lead">Showcasing my work in web development and data analytics.</p>
+      <p class="lead">Empowering businesses with insightful data and impactful web solutions.</p>
+      <a href="#projects" class="btn btn-primary btn-lg mt-4">Explore My Work</a>
     </div>
   </section>
 
@@ -80,39 +133,39 @@
         <!-- Project Card 1 -->
         <div class="col">
           <div class="card h-100 project-card">
-            <img src="path/to/your/image1.jpg" class="card-img-top" alt="Project Image">
+            <img src="images/project1.jpg" class="card-img-top" alt="Project Image 1">
             <div class="card-body">
-              <h5 class="card-title">Project Title 1</h5>
-              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
+              <h5 class="card-title">Analytics Dashboard</h5>
+              <p class="card-text">Developed a comprehensive dashboard using Google Data Studio to visualize key metrics and user behavior.</p>
             </div>
             <div class="card-footer">
-              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+              <a href="https://link-to-your-project1.com" class="btn btn-primary" target="_blank">View Project</a>
             </div>
           </div>
         </div>
         <!-- Project Card 2 -->
         <div class="col">
           <div class="card h-100 project-card">
-            <img src="path/to/your/image2.jpg" class="card-img-top" alt="Project Image">
+            <img src="images/project2.jpg" class="card-img-top" alt="Project Image 2">
             <div class="card-body">
-              <h5 class="card-title">Project Title 2</h5>
-              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
+              <h5 class="card-title">SEO Optimization Tool</h5>
+              <p class="card-text">Created a tool that analyzes website SEO performance and provides actionable recommendations to improve rankings.</p>
             </div>
             <div class="card-footer">
-              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+              <a href="https://link-to-your-project2.com" class="btn btn-primary" target="_blank">View Project</a>
             </div>
           </div>
         </div>
         <!-- Project Card 3 -->
         <div class="col">
           <div class="card h-100 project-card">
-            <img src="path/to/your/image3.jpg" class="card-img-top" alt="Project Image">
+            <img src="images/project3.jpg" class="card-img-top" alt="Project Image 3">
             <div class="card-body">
-              <h5 class="card-title">Project Title 3</h5>
-              <p class="card-text">Brief description of the project highlighting key features and technologies used.</p>
+              <h5 class="card-title">User Engagement Tracker</h5>
+              <p class="card-text">Implemented a tracking system to monitor and enhance user engagement across multiple web platforms.</p>
             </div>
             <div class="card-footer">
-              <a href="https://link-to-your-project.com" class="btn btn-primary" target="_blank">View Project</a>
+              <a href="https://link-to-your-project3.com" class="btn btn-primary" target="_blank">View Project</a>
             </div>
           </div>
         </div>
@@ -125,13 +178,27 @@
   <section id="about" class="py-5 bg-light">
     <div class="container">
       <h2 class="mb-5 text-center">About Me</h2>
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-md-4 text-center">
-          <img src="path/to/your/profile.jpg" class="rounded-circle img-fluid" alt="Your Name">
+          <img src="images/profile.jpg" class="img-fluid rounded-circle shadow-sm" alt="Your Name">
         </div>
         <div class="col-md-8">
-          <p>Hello! I'm <strong>Your Name</strong>, a web developer and data analyst with a passion for creating insightful analytics dashboards and web applications. I have experience in technologies such as HTML, CSS, JavaScript, Google Analytics, and more. Through my projects, I aim to help businesses make data-driven decisions.</p>
-          <!-- Add more details about your background, skills, and experience -->
+          <h3>Hello! I'm Your Name</h3>
+          <p>
+            I'm a dedicated web developer and data analyst with over X years of experience in creating impactful web solutions and providing actionable insights through data analytics. My expertise lies in leveraging tools like Google Analytics, Google Data Studio, and various web technologies to help businesses optimize their online presence and drive growth.
+          </p>
+          <p>
+            Whether it's building interactive dashboards, optimizing SEO strategies, or tracking user engagement, I strive to deliver results that make a difference. Let's collaborate to turn your data into meaningful strategies!
+          </p>
+          <ul class="list-inline">
+            <li class="list-inline-item"><strong>Skills:</strong></li>
+            <li class="list-inline-item"><span class="badge bg-primary">Web Development</span></li>
+            <li class="list-inline-item"><span class="badge bg-primary">Data Analysis</span></li>
+            <li class="list-inline-item"><span class="badge bg-primary">SEO Optimization</span></li>
+            <li class="list-inline-item"><span class="badge bg-primary">Google Analytics</span></li>
+            <li class="list-inline-item"><span class="badge bg-primary">Google Data Studio</span></li>
+            <!-- Add more skills as needed -->
+          </ul>
         </div>
       </div>
     </div>
@@ -142,33 +209,34 @@
     <div class="container">
       <h2 class="mb-5 text-center">Contact Me</h2>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mb-4">
           <form action="https://formspree.io/f/your-form-id" method="POST">
             <div class="mb-3">
               <label for="name" class="form-label">Your Name</label>
-              <input type="text" name="name" class="form-control" id="name" required>
+              <input type="text" name="name" class="form-control" id="name" placeholder="Enter your name" required>
             </div>
             <div class="mb-3">
               <label for="email" class="form-label">Your Email</label>
-              <input type="email" name="_replyto" class="form-control" id="email" required>
+              <input type="email" name="_replyto" class="form-control" id="email" placeholder="Enter your email" required>
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">Your Message</label>
-              <textarea name="message" class="form-control" id="message" rows="5" required></textarea>
+              <textarea name="message" class="form-control" id="message" rows="5" placeholder="Enter your message" required></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Send Message</button>
           </form>
         </div>
         <div class="col-md-6">
           <h5>Get in Touch</h5>
-          <p>You can reach me via email or connect with me on social media platforms.</p>
+          <p>You can reach me via email or connect with me on my social media profiles.</p>
           <ul class="list-unstyled">
             <li><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a></li>
             <li><strong>Phone:</strong> (123) 456-7890</li>
           </ul>
-          <div class="social-icons">
+          <div class="social-icons mt-3">
             <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="bi bi-linkedin"></i></a>
             <a href="https://github.com/yourusername" target="_blank"><i class="bi bi-github"></i></a>
+            <a href="https://twitter.com/yourusername" target="_blank"><i class="bi bi-twitter"></i></a>
             <!-- Add more social icons as needed -->
           </div>
         </div>
@@ -180,6 +248,12 @@
   <footer class="text-center">
     <div class="container">
       <p>&copy; <span id="year"></span> Your Name. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/yourprofile" target="_blank"><i class="bi bi-linkedin"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="bi bi-github"></i></a>
+        <a href="https://twitter.com/yourusername" target="_blank"><i class="bi bi-twitter"></i></a>
+        <!-- Add more social icons as needed -->
+      </div>
     </div>
   </footer>
 
