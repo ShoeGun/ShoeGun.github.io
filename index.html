@@ -43,7 +43,7 @@
       z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
     }
     .navbar-nav {
       display: flex;
@@ -215,46 +215,40 @@
         background: rgba(0, 0, 0, 0.7);
         width: 100%;
         flex-direction: column;
-        position: absolute;
-        top: 60px;
-        left: 0;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        height: 100%;
+        padding-top: 60px;
+        transition: left 0.3s ease;
+        backdrop-filter: blur(10px);
+        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
       }
       .navbar-nav.show {
-        transform: translateX(0);
+        left: 0;
       }
       .navbar-toggler {
+        background-color: transparent;
+        border: none;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1100;
+      }
+      .navbar-toggler-icon {
+        width: 30px;
+        height: 3px;
         background-color: #ffffff;
-        border-radius: 5px;
+        margin: 6px 0;
       }
       .nav-link {
         color: #ffffff;
         padding: 15px;
         display: block;
-      }
-    }
-    @media (max-width: 768px) {
-      .hero-section h1 {
-        font-size: 2.5rem;
-      }
-      .hero-section p {
-        font-size: 1rem;
-      }
-      .navbar-nav {
-        flex-direction: column;
         text-align: center;
-        gap: 10px;
       }
-      .navbar {
-        position: static;
-      }
-      .project-card {
-        margin-bottom: 20px;
-      }
-      #about img {
-        width: 100%;
-        max-width: 200px;
+      .hero-section {
+        padding-top: 120px;
       }
     }
   </style>
@@ -266,23 +260,34 @@
   <div id="navbar"></div>
   <script type="text/babel">
     class Navbar extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { menuOpen: false };
+        this.toggleMenu = this.toggleMenu.bind(this);
+      }
+
+      toggleMenu() {
+        this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
+      }
+
       render() {
+        const { menuOpen } = this.state;
         return (
           <nav className="navbar navbar-expand-lg fixed-top">
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon"></span>
+            <button className="navbar-toggler" type="button" onClick={this.toggleMenu} aria-label="Toggle navigation">
+              <div className="navbar-toggler-icon"></div>
+              <div className="navbar-toggler-icon"></div>
+              <div className="navbar-toggler-icon"></div>
             </button>
-            <div className="container-fluid">
-              <div className="collapse navbar-collapse justify-content-center justify-content-lg-between" id="navbarNav">
-                <ul className="navbar-nav">
-                  <li className="nav-item"><a className="nav-link" href="#navbar">Home</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#about">About Me</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
-                  <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
-                </ul>
-              </div>
+            <div className={`container-fluid collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="navbarNav">
+              <ul className="navbar-nav">
+                <li className="nav-item"><a className="nav-link" href="#navbar">Home</a></li>
+                <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
+                <li className="nav-item"><a className="nav-link" href="#about">About Me</a></li>
+                <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
+                <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
+                <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+              </ul>
             </div>
           </nav>
         );
@@ -488,11 +493,12 @@
     const chart2 = new Chart(ctx2, {
       type: 'bar',
       data: {
-        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
         datasets: [{
           label: 'Customer Satisfaction',
-          data: [85, 90, 80, 95],
-          backgroundColor: '#ef8354',
+          data: [85, 88, 90, 92, 91, 94, 96],
+          backgroundColor: '#4f5d75',
+          borderColor: '#4f5d75',
           borderWidth: 1
         }]
       },
@@ -502,6 +508,5 @@
       }
     });
   </script>
-
 </body>
 </html>
