@@ -260,7 +260,7 @@
         height: 100%;
       }
       .nav-link {
-        color: #ffffff;
+        color: #2d3142;
         padding: 15px;
         text-align: center;
         width: 100%;
@@ -284,6 +284,10 @@
         this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
       };
 
+      closeNavbar = () => {
+        this.setState({ isOpen: false });
+      };
+
       render() {
         return (
           <nav className="navbar navbar-expand-lg fixed-top">
@@ -299,12 +303,12 @@
             </button>
             <div className={`navbar-collapse ${this.state.isOpen ? 'active' : ''}`} id="navbarNav">
               <ul className="navbar-nav mx-auto">
-                <li className="nav-item"><a className="nav-link" href="#navbar">Home</a></li>
-                <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
-                <li className="nav-item"><a className="nav-link" href="#about">About Me</a></li>
-                <li className="nav-item"><a className="nav-link" href="#services">Services</a></li>
-                <li className="nav-item"><a className="nav-link" href="#testimonials">Testimonials</a></li>
-                <li className="nav-item"><a className="nav-link" href="#contact">Contact</a></li>
+                <li className="nav-item"><a className="nav-link" href="#navbar" onClick={this.closeNavbar}>Home</a></li>
+                <li className="nav-item"><a className="nav-link" href="#projects" onClick={this.closeNavbar}>Projects</a></li>
+                <li className="nav-item"><a className="nav-link" href="#about" onClick={this.closeNavbar}>About Me</a></li>
+                <li className="nav-item"><a className="nav-link" href="#services" onClick={this.closeNavbar}>Services</a></li>
+                <li className="nav-item"><a className="nav-link" href="#testimonials" onClick={this.closeNavbar}>Testimonials</a></li>
+                <li className="nav-item"><a className="nav-link" href="#contact" onClick={this.closeNavbar}>Contact</a></li>
               </ul>
             </div>
           </nav>
