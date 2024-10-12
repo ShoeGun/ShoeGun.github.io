@@ -283,7 +283,7 @@
               <div className="navbar-toggler-icon"></div>
             </button>
             <div className={`container-fluid collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="navbarNav">
-              <ul className="navbar-nav">
+              <ul className="navbar-nav mx-auto">
                 <li className="nav-item"><a className="nav-link" href="#navbar">Home</a></li>
                 <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
                 <li className="nav-item"><a className="nav-link" href="#about">About Me</a></li>
@@ -450,3 +450,66 @@
           </form>
         </div>
         <div class="col-md-6">
+          <h5>Email:</h5>
+          <p>RichardX13@gmail.com</p>
+          <h5>Phone:</h5>
+          <p>(415) 697-4734</p>
+          <h5>LinkedIn:</h5>
+          <p><a href="https://www.linkedin.com/in/richardjones2020/" target="_blank">Richard Jones on LinkedIn</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2024 Richard Jones. All Rights Reserved.</p>
+      <div class="social-icons">
+        <a href="https://www.linkedin.com/in/richardjones2020/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chart.js Script for Mock Charts -->
+  <script>
+    const ctx1 = document.getElementById('chart1').getContext('2d');
+    const chart1 = new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Workforce Planning',
+          data: [30, 50, 40, 60, 70, 90, 100],
+          borderColor: '#4f5d75',
+          borderWidth: 2,
+          fill: false
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+
+    const ctx2 = document.getElementById('chart2').getContext('2d');
+    const chart2 = new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+        datasets: [{
+          label: 'Customer Satisfaction',
+          data: [85, 88, 90, 92, 91, 94, 96],
+          backgroundColor: '#4f5d75',
+          borderColor: '#4f5d75',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+  </script>
+</body>
+</html>
