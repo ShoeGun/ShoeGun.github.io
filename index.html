@@ -219,7 +219,7 @@
         top: 0;
         left: -100%;
         height: 100%;
-        padding-top: 60px;
+        padding-top: 10px;
         transition: left 0.3s ease;
         backdrop-filter: blur(10px);
         box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
@@ -234,12 +234,13 @@
         top: 10px;
         right: 10px;
         z-index: 1100;
+        padding: 5px;
       }
       .navbar-toggler-icon {
-        width: 30px;
-        height: 3px;
+        width: 25px;
+        height: 2px;
         background-color: #ffffff;
-        margin: 6px 0;
+        margin: 5px 0;
       }
       .nav-link {
         color: #ffffff;
@@ -274,7 +275,7 @@
         const { menuOpen } = this.state;
         return (
           <nav className="navbar navbar-expand-lg fixed-top">
-            <button className="navbar-toggler" type="button" onClick={this.toggleMenu} aria-label="Toggle navigation">
+            <button className="navbar-toggler d-lg-none" type="button" onClick={this.toggleMenu} aria-label="Toggle navigation">
               <div className="navbar-toggler-icon"></div>
               <div className="navbar-toggler-icon"></div>
               <div className="navbar-toggler-icon"></div>
