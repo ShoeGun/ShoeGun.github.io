@@ -237,23 +237,27 @@
       .navbar-toggler {
         display: block;
       }
-      .navbar-nav {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 80%;
-        background: rgba(0, 0, 0, 0.9);
+      .navbar-collapse {
         position: fixed;
         top: 0;
         right: -100%;
+        width: 80%;
         height: 100%;
+        background: rgba(255, 255, 255, 0.8); /* Glass effect */
+        backdrop-filter: blur(10px); /* Glass effect */
         transition: right 0.3s ease;
         padding-top: 50px;
         box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
       }
-      .navbar-nav.active {
+      .navbar-collapse.active {
         right: 0;
+      }
+      .navbar-nav {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
       }
       .nav-link {
         color: #ffffff;
@@ -293,8 +297,8 @@
               <span className="navbar-toggler-icon"></span>
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="navbar-collapse" id="navbarNav">
-              <ul className={`navbar-nav mx-auto ${this.state.isOpen ? 'active' : ''}`}>
+            <div className={`navbar-collapse ${this.state.isOpen ? 'active' : ''}`} id="navbarNav">
+              <ul className="navbar-nav mx-auto">
                 <li className="nav-item"><a className="nav-link" href="#navbar">Home</a></li>
                 <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
                 <li className="nav-item"><a className="nav-link" href="#about">About Me</a></li>
