@@ -461,23 +461,26 @@
           </form>
         </div>
         <div class="col-md-6">
-          <h5>Email:</h5>
-          <p>RichardX13@gmail.com</p>
-          <h5>Phone:</h5>
-          <p>(415) 697-4734</p>
-          <h5>LinkedIn:</h5>
-          <p><a href="https://www.linkedin.com/in/richardjones2020/" target="_blank">Richard Jones on LinkedIn</a></p>
+          <h5>Get in Touch</h5>
+          <p>Feel free to reach out for collaborations or just a friendly chat. I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+          <ul class="list-unstyled">
+            <li><strong>Email:</strong> <a href="mailto:RichardX13@gmail.com">RichardX13@gmail.com</a></li>
+            <li><strong>Phone:</strong> (415) 697-4734</li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/richardjones2020/" target="_blank">linkedin.com/in/richardjones2020</a></li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Footer Section -->
-  <footer class="text-center">
+  <footer class="text-center py-4">
     <div class="container">
       <p>&copy; 2024 Richard Jones. All Rights Reserved.</p>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/richardjones2020/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/RichardJones2020" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:RichardX13@gmail.com"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </footer>
@@ -491,41 +494,36 @@
       type: "line",
       data: {
         labels: ["January", "February", "March", "April", "May", "June"],
-        datasets: [
-          {
-            label: "Workforce Planning",
-            data: [30, 45, 32, 50, 62, 72],
-            borderColor: "#4f5d75",
-            backgroundColor: "rgba(79, 93, 117, 0.2)",
-            borderWidth: 2,
-            fill: true,
-          },
-        ],
+        datasets: [{
+          label: "Workforce Planning",
+          data: [12, 19, 3, 5, 2, 3],
+          borderColor: "#4f5d75",
+          backgroundColor: "rgba(79, 93, 117, 0.2)",
+          fill: true
+        }]
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false,
-      },
+        maintainAspectRatio: false
+      }
     });
 
     new Chart(ctx2, {
       type: "bar",
       data: {
         labels: ["January", "February", "March", "April", "May", "June"],
-        datasets: [
-          {
-            label: "Customer Satisfaction",
-            data: [85, 90, 80, 88, 92, 95],
-            backgroundColor: "#ef8354",
-            borderColor: "#ef8354",
-            borderWidth: 1,
-          },
-        ],
+        datasets: [{
+          label: "Customer Satisfaction Analysis",
+          data: [22, 30, 15, 10, 25, 18],
+          backgroundColor: "#4f5d75",
+          borderColor: "#4f5d75",
+          borderWidth: 1
+        }]
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false,
-      },
+        maintainAspectRatio: false
+      }
     });
   </script>
 </body>
