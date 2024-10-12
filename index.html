@@ -43,7 +43,24 @@
       z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
+    }
+    .navbar-brand {
+      color: #bfc0c0;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+    .navbar-toggler {
+      background-color: #4f5d75;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .navbar-toggler-icon {
+      background-image: none;
+      font-size: 1.5rem;
+      color: #ffffff;
     }
     .navbar-nav {
       display: flex;
@@ -215,19 +232,29 @@
         padding: 10px 15px;
         background: linear-gradient(-45deg, #2d3142, #4f5d75, #8b8e91, #a0522d);
       }
+      .navbar-toggler {
+        display: block;
+      }
       .navbar-nav {
+        display: none;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: auto;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 20px 0;
+      }
+      .navbar-nav.active {
+        display: flex;
       }
       .nav-link {
-        color: #bfc0c0;
-        padding: 10px;
+        color: #ffffff;
+        padding: 15px;
         text-align: center;
-      }
-      .hero-section {
-        padding-top: 120px;
+        width: 100%;
       }
     }
   </style>
@@ -239,10 +266,27 @@
   <div id="navbar"></div>
   <script type="text/babel">
     class Navbar extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = { isOpen: false };
+      }
+
+      toggleNavbar = () => {
+        this.setState((prevState) => ({ isOpen: !prevState.isOpen }));
+      };
+
       render() {
         return (
           <nav className="navbar navbar-expand-lg fixed-top">
-            <div className="container-fluid collapse navbar-collapse" id="navbarNav">
+            <a className="navbar-brand" href="#navbar">Richard Jones</a>
+            <button
+              className="navbar-toggler"
+              type="button"
+              onClick={this.toggleNavbar}
+            >
+              <span className="navbar-toggler-icon">&#9776;</span>
+            </button>
+            <div className={`collapse navbar-collapse ${this.state.isOpen ? 'active' : ''}`} id="navbarNav">
               <ul className="navbar-nav mx-auto">
                 <li className="nav-item"><a className="nav-link" href="#navbar">Home</a></li>
                 <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
@@ -341,11 +385,11 @@
       <div class="row">
         <div class="col-md-6">
           <h5 class="text-center">Workforce Planning</h5>
-          <canvas id="chart1" style="height: 400px; max-height: 400px" style="max-height: 400px;"></canvas>
+          <canvas id="chart1" style="height: 400px; max-height: 400px"></canvas>
         </div>
         <div class="col-md-6">
           <h5 class="text-center">Customer Satisfaction Analysis</h5>
-          <canvas id="chart2" style="height: 400px; max-height: 400px" style="max-height: 400px;"></canvas>
+          <canvas id="chart2" style="height: 400px; max-height: 400px"></canvas>
         </div>
       </div>
     </div>
