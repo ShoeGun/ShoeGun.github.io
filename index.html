@@ -240,10 +240,10 @@
         padding: 5px;
       }
       .navbar-toggler-icon {
-        width: 25px;
+        width: 30px;
         height: 3px;
         background-color: #ffffff;
-        margin: 4px 0;
+        margin: 5px 0;
       }
       .nav-link {
         color: #ffffff;
@@ -279,8 +279,6 @@
         return (
           <nav className="navbar navbar-expand-lg fixed-top">
             <button className="navbar-toggler d-lg-none" type="button" onClick={this.toggleMenu} aria-label="Toggle navigation">
-              <div className="navbar-toggler-icon"></div>
-              <div className="navbar-toggler-icon"></div>
               <div className="navbar-toggler-icon"></div>
             </button>
             <div className={`container-fluid collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="navbarNav">
@@ -471,3 +469,52 @@
       </div>
     </div>
   </footer>
+
+  <!-- Chart.js Script for Mock Charts -->
+  <script>
+    const ctx1 = document.getElementById("chart1").getContext("2d");
+    const ctx2 = document.getElementById("chart2").getContext("2d");
+
+    new Chart(ctx1, {
+      type: "line",
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [
+          {
+            label: "Workforce Planning",
+            data: [30, 45, 32, 50, 62, 72],
+            borderColor: "#4f5d75",
+            backgroundColor: "rgba(79, 93, 117, 0.2)",
+            borderWidth: 2,
+            fill: true,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
+    });
+
+    new Chart(ctx2, {
+      type: "bar",
+      data: {
+        labels: ["January", "February", "March", "April", "May", "June"],
+        datasets: [
+          {
+            label: "Customer Satisfaction",
+            data: [85, 90, 80, 88, 92, 95],
+            backgroundColor: "#ef8354",
+            borderColor: "#ef8354",
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
+    });
+  </script>
+</body>
+</html>
