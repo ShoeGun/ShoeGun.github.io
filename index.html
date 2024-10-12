@@ -238,7 +238,7 @@
         display: block;
       }
       .navbar-nav {
-        display: none;
+        display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -293,7 +293,7 @@
               <span className="navbar-toggler-icon"></span>
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className={`navbar-nav ${this.state.isOpen ? 'active' : ''}`} id="navbarNav">
+            <div className={`navbar-collapse ${this.state.isOpen ? 'active' : ''}`} id="navbarNav">
               <ul className="navbar-nav mx-auto">
                 <li className="nav-item"><a className="nav-link" href="#navbar">Home</a></li>
                 <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
@@ -473,6 +473,8 @@
     </div>
   </section>
 
+  <!-- Footer Section -->
+ 
   <!-- Footer Section -->
   <footer class="text-center py-4">
     <div class="container">
