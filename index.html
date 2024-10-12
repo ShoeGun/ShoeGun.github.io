@@ -16,14 +16,6 @@
     integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
     crossorigin="anonymous"
   >
-  <!-- Font Awesome CSS for Icons -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    integrity="sha512-tob1ID6t4jSrbTmSU0X+hBNiv9Fw4E4iIypYtKvE1ajqXEM13rqgmKYk93QrtBQDKzY+KfZ/BwOBC9ZRMZZR4g=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
   <!-- Custom CSS -->
   <style>
     @keyframes gradient {
@@ -246,29 +238,24 @@
         display: block;
       }
       .navbar-collapse {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 80%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9); /* Reverted back to black background */
-        backdrop-filter: blur(10px); /* Glass effect */
-        transition: right 0.3s ease;
-        padding-top: 50px;
-        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-      }
-      .navbar-collapse.active {
-        right: 0;
+        display: ${this.state.isOpen ? 'block' : 'none'};
       }
       .navbar-nav {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        right: 0;
         height: 100%;
+        padding-top: 50px;
+        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+        z-index: 1000;
       }
       .nav-link {
-        color: #ffffff; /* Reverted back to white text */
+        color: #ffffff;
         padding: 15px;
         text-align: center;
         width: 100%;
