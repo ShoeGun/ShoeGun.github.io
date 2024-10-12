@@ -211,39 +211,20 @@
     @media (max-width: 768px) {
       .navbar {
         width: 100%;
-        justify-content: space-between;
+        justify-content: center;
         padding: 5px 15px;
       }
       .navbar-nav {
         background: rgba(0, 0, 0, 0.7);
         width: 100%;
         flex-direction: column;
-        position: fixed;
-        top: 0;
-        left: -100%;
-        height: 100%;
-        padding-top: 60px;
-        transition: left 0.3s ease;
-        backdrop-filter: blur(10px);
-        box-shadow: 4px 0 10px rgba(0, 0, 0, 0.3);
-      }
-      .navbar-nav.show {
-        left: 0;
-      }
-      .navbar-toggler {
-        background-color: transparent;
-        border: none;
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        z-index: 1100;
-        padding: 5px;
-      }
-      .navbar-toggler-icon {
-        width: 30px;
-        height: 3px;
-        background-color: #ffffff;
-        margin: 5px 0;
+        position: relative;
+        top: auto;
+        left: auto;
+        height: auto;
+        padding-top: 0;
+        backdrop-filter: none;
+        box-shadow: none;
       }
       .nav-link {
         color: #ffffff;
@@ -264,24 +245,10 @@
   <div id="navbar"></div>
   <script type="text/babel">
     class Navbar extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = { menuOpen: false };
-        this.toggleMenu = this.toggleMenu.bind(this);
-      }
-
-      toggleMenu() {
-        this.setState(prevState => ({ menuOpen: !prevState.menuOpen }));
-      }
-
       render() {
-        const { menuOpen } = this.state;
         return (
           <nav className="navbar navbar-expand-lg fixed-top">
-            <button className="navbar-toggler d-lg-none" type="button" onClick={this.toggleMenu} aria-label="Toggle navigation">
-              <div className="navbar-toggler-icon"></div>
-            </button>
-            <div className={`container-fluid collapse navbar-collapse ${menuOpen ? 'show' : ''}`} id="navbarNav">
+            <div className="container-fluid collapse navbar-collapse" id="navbarNav">
               <ul className="navbar-nav mx-auto">
                 <li className="nav-item"><a className="nav-link" href="#navbar">Home</a></li>
                 <li className="nav-item"><a className="nav-link" href="#projects">Projects</a></li>
