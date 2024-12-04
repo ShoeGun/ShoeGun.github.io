@@ -228,39 +228,51 @@
     }
     /* Media Queries for Mobile Responsiveness */
     @media (max-width: 768px) {
-      .navbar {
-        width: 100%;
-        justify-content: space-between;
-        padding: 10px 15px;
-        background: linear-gradient(-45deg, #2d3142, #4f5d75, #8b8e91, #a0522d);
-      }
-      .navbar-toggler {
-        display: block;
-      }
-      .navbar-collapse {
-        display: ${this.state.isOpen ? 'block' : 'none'};
-      }
-      .navbar-nav {
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        position: fixed;
-        top: 0;
-        right: 0;
-        height: 100%;
-        padding-top: 50px;
-        box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
-        z-index: 1000;
-      }
-      .nav-link {
-        color: #ffffff;
-        padding: 15px;
-        text-align: center;
-        width: 100%;
-      }
-    }
+  .navbar {
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: linear-gradient(-45deg, #2d3142, #4f5d75, #8b8e91, #a0522d);
+  }
+  .navbar-toggler {
+    display: block;
+    background: none;
+    border: none;
+  }
+  .navbar-toggler-icon {
+    width: 30px;
+    height: 3px;
+    background-color: #ffffff;
+    display: block;
+    margin: 6px 0;
+  }
+  .navbar-collapse {
+    display: none;
+  }
+  .navbar-collapse.active {
+    display: block;
+  }
+  .navbar-nav {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    position: absolute;
+    top: 60px; /* Adjust based on your navbar height */
+    left: 0;
+    right: 0;
+    padding-top: 10px;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+  .nav-link {
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+  }
+}
   </style>
   <!-- Chart.js Library -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
