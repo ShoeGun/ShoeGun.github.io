@@ -1,4 +1,4 @@
 
 # Preserve hashes of the checked static Dom release.
-public/lab/** -text
+public/lab/** -text whitespace=cr-at-eol
 public/data/geo/** -text
