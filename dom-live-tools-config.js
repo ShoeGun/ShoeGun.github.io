@@ -1,7 +1,7 @@
 /* global window */
 (() => {
   // Fixed owner-approved deployments for the portfolio and its private previews.
-  const portfolioOrigins = ['https://shoegun.github.io', 'http://127.0.0.1:4179', 'http://localhost:4179', 'https://desktop-6he0t2k.taile5e8da.ts.net:10443'];
+  const portfolioOrigins = ['https://shoegun.github.io', 'http://127.0.0.1:4179', 'http://localhost:4179'];
   if (!portfolioOrigins.includes(window.location.origin)) return;
   window.DomLiveTools?.configure({
     henrys: {
