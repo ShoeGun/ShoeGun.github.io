@@ -6,7 +6,7 @@ const dist = join(root, 'dist');
 await rm(dist, { recursive: true, force: true });
 await mkdir(dist, { recursive: true });
 
-for (const file of ['index.html', 'style.css', 'script.js', 'portfolio.css', 'portfolio.js', 'profile.jpg', 'profile1.jpg', 'resume.txt', 'Richard-Jones-resume.pdf', 'Richard-Jones-resume.docx']) {
+for (const file of ['index.html', 'style.css', 'script.js', 'portfolio.css', 'portfolio.js', 'dom-practical.css', 'dom-map-window.js', 'dom-map-source.js', 'dom-tour-console.js', 'dom-geography-tools.js', 'dom-live-tools.js', 'dom-live-tools-config.js', 'profile.jpg', 'profile1.jpg', 'resume.txt', 'Richard-Jones-resume.pdf', 'Richard-Jones-resume.docx']) {
   await cp(join(root, file), join(dist, file));
 }
 
@@ -15,3 +15,6 @@ await cp(join(root, 'public', 'project-previews'), join(dist, 'project-previews'
 
 await mkdir(join(dist, 'data'), { recursive: true });
 await cp(join(root, 'public', 'data', 'demo.csv'), join(dist, 'data', 'demo.csv'));
+
+await cp(join(root, 'public', 'lab'), join(dist, 'lab'), { recursive: true });
+await cp(join(root, 'public', 'data', 'geo'), join(dist, 'data', 'geo'), { recursive: true });

@@ -1,0 +1,4 @@
+
+# Preserve hashes of the checked static Dom release.
+public/lab/** -text
+public/data/geo/** -text

@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "mode": "browser-r-workflows",
+  "modelWeightsRequired": false,
+  "files": [
+    {
+      "path": "index.html",
+      "bytes": 509,
+      "sha256": "482a79c87ed3861dc88825e8de167369117188d792f6bb0f7cd7f36781b6db97"
+    },
+    {
+      "path": "S2-NOTICES.txt",
+      "bytes": 2143,
+      "sha256": "eda959fd617d44ed7609565cd1311f27593ad037240509d1a30dd472dbd46955"
+    },
+    {
+      "path": "assets/bank-full-DfE_VufC.csv",
+      "bytes": 4610348,
+      "sha256": "d1513ec63b385506f7cfce9f2c5caa9fe99e7ba4e8c3fa264b3aaf0f849ed32d"
+    },
+    {
+      "path": "assets/index-BJzGhzYd.css",
+      "bytes": 56332,
+      "sha256": "e2f850475c92520fec594645ffdfd9761500354c2b09846e1092fd5850664170"
+    },
+    {
+      "path": "assets/index-Ca2TQkCi.js",
+      "bytes": 850533,
+      "sha256": "617c795b16b83ffe4e070e2bc21d12b8107f2dafcebc3ad3c6c5a5d91a44a077"
+    },
+    {
+      "path": "assets/r-sandbox-DCPbPI5K.js",
+      "bytes": 11978,
+      "sha256": "50c250e1dd6feb41e91b797577df395270a0fcfeb53aa3c3cf4d45cbf0b293c1"
+    }
+  ]
+}

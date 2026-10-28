@@ -44,6 +44,9 @@ jobs:
       - name: Verify public Hugging Face model registry
         run: npm run verify:public-models
 
+      - name: Verify practical Dom artifact
+        run: node scripts/verify-practical-artifact.mjs
+
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

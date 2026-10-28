@@ -966,7 +966,14 @@
   <!-- Chart.js Library -->
   <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="/portfolio.css">
-  <script defer src="/portfolio.js"></script>
+  <script defer src="/dom-tour-console.js"></script>
+<script defer src="/dom-map-window.js"></script>
+<script defer src="/dom-map-source.js"></script>
+<script defer src="/portfolio.js"></script>
+<script defer src="/dom-geography-tools.js"></script>
+<script defer src="/dom-live-tools.js"></script>
+<script defer src="/dom-live-tools-config.js"></script>
+<link rel="stylesheet" href="/dom-practical.css">
 </head>
 <body>
   <!-- React Navigation Bar -->
@@ -1266,11 +1273,11 @@
             </div>
           </div>
         </div>
-        <iframe src="/agent/?v=dom-face-refresh-20260907" style="width:100%;height:160px;min-height:140px;border:0" loading="lazy" title="Local browser analytics agent"></iframe>
+        <div id="data-lab"><iframe src="/lab/" class="portfolio-lab-frame" id="dom-chat-frame" loading="lazy" title="Dom — browser R analytics" sandbox="allow-scripts allow-same-origin allow-downloads allow-popups allow-forms"></iframe><p><a href="/lab/" target="_blank" rel="noopener">Open Dom in a new tab ↗</a></p></div>
       </div>
       <div class="dom-guide">
-        <details><summary>What can I try?</summary><div><p>Activate Dom, then ask a short question or try making it rain hotdogs. Connect a public Google Sheet or use the sample data to explore his analytics tools. Keep requests small while I'm improving the model.</p><p>The chart button above works without downloading the model. It's a quick look at how his face is made.</p></div></details>
-        <details><summary>What happens when I activate him?</summary><div><p>Your browser downloads my trained model from Hugging Face, about 770 MB. After that, the model runs on your device rather than sending your prompts to a hosted chat service. The first load can take a while, and a capable computer will have an easier time than a phone.</p><p>Loading the model and connecting a public sheet still use the internet. Don't put private information in a publicly shared sheet.</p></div></details>
+        <details><summary>What can I try?</summary><div><p>Upload a CSV or JSON table, connect a public data-file URL, or choose an example. Try “What is the average amount?”, “Scatter plot amount vs score”, “Investigate this data”, or “Show me Kepler”. Dom computes supported analyses in R and shows the evidence.</p><p>No large language-model download is needed. The chart button above shows how his face is made.</p></div></details>
+        <details><summary>Does Dom need a model download?</summary><p>No large language-model download is needed for this release. Chat requests select supported workflows, R computes in an isolated browser runtime, and the interface shows the results and executed code. R downloads its runtime on first use. Unsupported or ambiguous requests need clarification.</p></details>
         <details><summary>Why does his face turn into charts?</summary><div><p>I wanted the data to have a little personality. His eyes and mouth use Chart.js, the same library that draws the bars and trend line. He looks thoughtful while working and moves his mouth as his reply arrives. There's no voice yet.</p></div></details>
         <details><summary>What am I building next?</summary><div><p>I plan to add voice and train Dom with more analytics tools, so he can help explore data and explain what he finds. Those are next steps, not features I'm claiming are finished.</p><p>He's still an experiment. He can get things wrong, so check anything important. I'd rather show you what I'm building honestly than pretend it's a finished product.</p><a href="https://huggingface.co/Brazenle/dom-hotdog-rain" target="_blank" rel="noopener noreferrer">See the trained model and its limitations</a></div></details>
       </div>

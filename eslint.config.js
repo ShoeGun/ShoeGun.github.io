@@ -5,7 +5,7 @@ import globals from "globals";
 
 export default [
   {
-    ignores: ["coverage/**", "dist/**", "node_modules/**", "worker/logs/**", "worker/runtime/**"]
+    ignores: ["public/lab/**", "coverage/**", "dist/**", "node_modules/**", "worker/logs/**", "worker/runtime/**"]
   },
   js.configs.recommended,
   {
